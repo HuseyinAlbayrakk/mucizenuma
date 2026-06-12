@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Playfair Display", "Cinzel", Georgia, serif;
+  
+  --color-purple-950: #220325;
+  --color-purple-900: #300C32;
+  --color-purple-800: #4A154B;
+  --color-purple-700: #5F1A60;
+  --color-purple-500: #8C2E8E;
+  --color-purple-400: #B355B5;
+  --color-purple-300: #D38CD4;
+  --color-purple-100: #F3DEF4;
+  
+  --color-gold-50: #FAF7EE;
+  --color-gold-100: #F4EBCD;
+  --color-gold-400: #DFBA4F;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #AA831E;
+  
+  --color-cream-50: #FDFBF7;
+  --color-cream-100: #F8F4EC;
+  --color-cream-200: #EAE4D5;
+}
+
+html {
+  zoom: 0.8;
+}
+
+/* Custom premium scrollbar styling matching Editorial style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A154B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #300C32;
+}
+
+/* Floating animation for subtle elegant elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-elegant-float {
+  animation: float 5s ease-in-out infinite;
+}
+
