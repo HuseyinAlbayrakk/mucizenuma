@@ -4,8 +4,11 @@
  */
 
 import { ArrowRight, Award, Compass, HeartHandshake } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section 
       className="relative min-h-screen pt-28 lg:pt-32 flex items-center justify-center overflow-hidden bg-[#5B3379] text-white"
@@ -57,7 +60,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-white/10 bg-white/5 text-gold-300 animate-elegant-float rounded" id="regional-badge">
               <Award className="w-4 h-4 text-gold-500" />
               <span className="font-sans text-[10px] font-bold tracking-widest uppercase">
-                Kilis’te İlk ve Tek Akademik Uzman Danışmanlık
+                {t("hero.badge", "Kilis’te İlk ve Tek Akademik Uzman Danışmanlık")}
               </span>
             </div>
 
@@ -67,7 +70,7 @@ export default function Hero() {
                 Ayşe Erendor
               </h1>
               <p className="font-sans text-xs tracking-[0.25em] uppercase text-gold-400 font-bold">
-                mu'cize nümâ Kurucusu & Profesyonel Eğitmen
+                {t("hero.subtitle", "mu'cize nümâ Kurucusu & Profesyonel Eğitmen")}
               </p>
             </div>
 
@@ -78,7 +81,7 @@ export default function Hero() {
               <div className="absolute -left-2 -top-4 text-[120px] opacity-[0.04] text-white font-serif select-none pointer-events-none font-black">“</div>
               
               <h2 className="font-serif text-xl sm:text-2xl md:text-3.5xl font-medium text-white leading-relaxed relative z-10">
-                İmkânsız kelimesi dahi <span className="text-gold-400 italic font-semibold">imkân</span>'dan oluşuyorsa, her şey mümkün.
+                {t("hero.slogan1", "İmkânsız kelimesi dahi ")}<span className="text-gold-400 italic font-semibold">{t("hero.sloganHighlight", "imkân")}</span>{t("hero.slogan2", "'dan oluşuyorsa, her şey mümkün.")}
               </h2>
               <div className="mt-6 flex items-center gap-3 relative z-10">
                 <div className="w-10 h-[1.5px] bg-gold-500"></div>
@@ -86,15 +89,14 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Explicit Corporate Title Checklist */}
             <div className="w-full bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10" id="credentials-chips">
-              <span className="block font-sans text-[10px] font-bold text-gold-400 tracking-wider mb-3 uppercase">AKADEMİK & PROFESYONEL ÖZGEÇMİŞ SEÇKİNİ:</span>
+              <span className="block font-sans text-[10px] font-bold text-gold-400 tracking-wider mb-3 uppercase">{t("hero.credentialsTitle", "AKADEMİK & PROFESYONEL ÖZGEÇMİŞ SEÇKİNİ:")}</span>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">Psikoloji Lisans Mezunu</span>
-                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">Sosyoloji Akademik Altyapı</span>
-                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">Uluslararası NLP Master Trainer</span>
-                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">Profesyonel Aile & Yaşam Danışmanı</span>
-                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">Bilinçaltı Teknikleri Uzmanı</span>
+                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">{t("hero.cred1", "Psikoloji Lisans Mezunu")}</span>
+                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">{t("hero.cred2", "Sosyoloji Akademik Altyapı")}</span>
+                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">{t("hero.cred3", "Uluslararası NLP Master Trainer")}</span>
+                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">{t("hero.cred4", "Profesyonel Aile & Yaşam Danışmanı")}</span>
+                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-purple-100">{t("hero.cred5", "Bilinçaltı Teknikleri Uzmanı")}</span>
               </div>
             </div>
 
@@ -105,14 +107,14 @@ export default function Hero() {
                 className="flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-600 text-purple-950 font-sans text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-lg shadow-md transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Compass className="w-4 h-4 text-purple-950" />
-                Hizmetlerimizi Keşfet
+                {t("hero.exploreServices", "Hizmetlerimizi Keşfet")}
               </a>
               <a
                 href="#anket"
                 className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/25 text-white border border-white/15 font-sans text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-lg shadow-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <HeartHandshake className="w-4 h-4 text-gold-400" />
-                Farkındalık Testini Çöz
+                {t("hero.takeQuiz", "Farkındalık Testini Çöz")}
               </a>
             </div>
 

@@ -103,6 +103,9 @@ export default function Footer({ onViewChange }: FooterProps) {
                 <button onClick={() => handleLinkClick("services")} className="hover:text-gold-400 transition text-left cursor-pointer">Destek ve Seans Terapileri</button>
               </li>
               <li>
+                <button onClick={() => handleLinkClick("trainings")} className="hover:text-gold-400 transition text-left cursor-pointer">Eğitimler & Atölyeler</button>
+              </li>
+              <li>
                 <button onClick={() => handleLinkClick("solutions")} className="hover:text-gold-400 transition text-left cursor-pointer">Çözüm Alanlarımız</button>
               </li>
               <li>

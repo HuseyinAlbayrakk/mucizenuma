@@ -1,0 +1,31 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "trainings": "Trainings",
+    "solutions": "Solutions",
+    "quizzes": "Analysis",
+    "comments": "Reviews",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookAppointment": "Book Appointment",
+    "mobileAward": "The First and Only Expert Consultancy in Kilis",
+    "mobileWhatsapp": "WhatsApp Appointment Line"
+  },
+  "hero": {
+    "badge": "First & Only Academic Expert Consultancy in Kilis",
+    "subtitle": "Founder of mu'cize nümâ & Professional Instructor",
+    "slogan1": "If even the word impossible contains ",
+    "sloganHighlight": "possible",
+    "slogan2": ", then anything is possible.",
+    "credentialsTitle": "ACADEMIC & PROFESSIONAL BACKGROUND:",
+    "cred1": "Psychology Bachelor's Degree",
+    "cred2": "Sociology Academic Background",
+    "cred3": "International NLP Master Trainer",
+    "cred4": "Professional Family & Life Consultant",
+    "cred5": "Subconscious Techniques Expert",
+    "exploreServices": "Explore Our Services",
+    "takeQuiz": "Take the Awareness Test"
+  }
+}

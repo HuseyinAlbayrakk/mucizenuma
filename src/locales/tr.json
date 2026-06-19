@@ -1,0 +1,31 @@
+{
+  "header": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "services": "Hizmetler",
+    "trainings": "Eğitimler",
+    "solutions": "Çözümler",
+    "quizzes": "Analizler",
+    "comments": "Yorumlar",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "bookAppointment": "Randevu Al",
+    "mobileAward": "Kilis’te İlk ve Tek Uzman Danışmanlık",
+    "mobileWhatsapp": "WhatsApp Randevu Hattı"
+  },
+  "hero": {
+    "badge": "Kilis’te İlk ve Tek Akademik Uzman Danışmanlık",
+    "subtitle": "mu'cize nümâ Kurucusu & Profesyonel Eğitmen",
+    "slogan1": "İmkânsız kelimesi dahi ",
+    "sloganHighlight": "imkân",
+    "slogan2": "'dan oluşuyorsa, her şey mümkün.",
+    "credentialsTitle": "AKADEMİK & PROFESYONEL ÖZGEÇMİŞ SEÇKİNİ:",
+    "cred1": "Psikoloji Lisans Mezunu",
+    "cred2": "Sosyoloji Akademik Altyapı",
+    "cred3": "Uluslararası NLP Master Trainer",
+    "cred4": "Profesyonel Aile & Yaşam Danışmanı",
+    "cred5": "Bilinçaltı Teknikleri Uzmanı",
+    "exploreServices": "Hizmetlerimizi Keşfet",
+    "takeQuiz": "Farkındalık Testini Çöz"
+  }
+}

@@ -4,7 +4,8 @@
  */
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Award } from "lucide-react";
+import { Menu, X, Phone, Award, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
   currentView: string;
@@ -28,16 +29,24 @@ export default function Header({ currentView, onViewChange }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const { t, i18n } = useTranslation();
+
   const navItems = [
-    { name: "Ana Sayfa", view: "home" },
-    { name: "Hakkımda", view: "about" },
-    { name: "Hizmetler", view: "services" },
-    { name: "Çözümler", view: "solutions" },
-    { name: "Analizler", view: "quizzes" },
-    { name: "Yorumlar", view: "comment" },
-    { name: "Blog", view: "blog" },
-    { name: "İletişim", view: "contact" },
+    { name: t("header.home", "Ana Sayfa"), view: "home" },
+    { name: t("header.about", "Hakkımda"), view: "about" },
+    { name: t("header.services", "Hizmetler"), view: "services" },
+    { name: t("header.trainings", "Eğitimler"), view: "trainings" },
+    { name: t("header.solutions", "Çözümler"), view: "solutions" },
+    { name: t("header.quizzes", "Analizler"), view: "quizzes" },
+    { name: t("header.comments", "Yorumlar"), view: "comment" },
+    { name: t("header.blog", "Blog"), view: "blog" },
+    { name: t("header.contact", "İletişim"), view: "contact" },
   ];
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language.startsWith('tr') ? 'en' : 'tr';
+    i18n.changeLanguage(newLang);
+  };
 
   const handleNavClick = (view: string) => {
     onViewChange(view);
@@ -90,6 +99,14 @@ export default function Header({ currentView, onViewChange }: HeaderProps) {
 
           {/* Call-to-Action Area */}
           <div className="hidden sm:flex items-center gap-3 xl:gap-4 flex-shrink-0">
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 text-purple-900 hover:text-gold-600 font-sans text-xs font-bold uppercase tracking-widest px-2 py-1 transition-all"
+              aria-label="Toggle Language"
+            >
+              <Globe className="w-4 h-4" />
+              {i18n.language.startsWith('tr') ? 'EN' : 'TR'}
+            </button>
             <a
               href="https://wa.me/905421994079?text=Merhaba,%20web%20siteniz%20üzerinden%20size%20ulaşıyorum.%20Seans%20ve%20danışmanlık%20hizmetleriniz%20hakkında%20bilgi%20alabilir%20miyim?"
               target="_blank"
@@ -98,7 +115,7 @@ export default function Header({ currentView, onViewChange }: HeaderProps) {
               id="h_whatsapp_button"
             >
               <Phone className="w-3 h-3 fill-current" />
-              Randevu Al
+              {t("header.bookAppointment", "Randevu Al")}
             </a>
           </div>
 
@@ -142,7 +159,7 @@ export default function Header({ currentView, onViewChange }: HeaderProps) {
           <div className="pt-4 border-t border-purple-900/10 flex flex-col gap-3">
             <div className="flex items-center text-purple-800 font-sans text-xs gap-2 px-3">
               <Award className="w-4 h-4 text-gold-500" />
-              <span className="font-semibold text-purple-950">Kilis’te İlk ve Tek Uzman Danışmanlık</span>
+              <span className="font-semibold text-purple-950">{t("header.mobileAward", "Kilis’te İlk ve Tek Uzman Danışmanlık")}</span>
             </div>
             <a
               href="https://wa.me/905421994079?text=Merhaba,%20web%20siteniz%20üzerinden%20size%20ulaşıyorum.%20Seans%20ve%20danışmanlık%20hizmetleriniz%20hakkında%20bilgi%20alabilir%20miyim?"
@@ -152,8 +169,15 @@ export default function Header({ currentView, onViewChange }: HeaderProps) {
               id="mobile-whatsapp-btn"
             >
               <Phone className="w-4 h-4 fill-current" />
-              WhatsApp Randevu Hattı
+              {t("header.mobileWhatsapp", "WhatsApp Randevu Hattı")}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="flex justify-center items-center gap-2 bg-cream-100 hover:bg-cream-200 text-purple-900 font-sans font-bold text-xs uppercase tracking-widest py-3 rounded-lg shadow-sm mx-3"
+            >
+              <Globe className="w-4 h-4" />
+              {i18n.language.startsWith('tr') ? 'Switch to English' : 'Türkçe\'ye Geç'}
+            </button>
           </div>
         </div>
       </div>

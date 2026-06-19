@@ -13,12 +13,15 @@ import SolutionsPanel from "./components/SolutionsPanel";
 import AwarenessQuiz from "./components/AwarenessQuiz";
 import Feedbacks from "./components/Feedbacks";
 import Blog from "./components/Blog";
+import Trainings from "./components/Trainings";
 import Footer from "./components/Footer";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Calendar, ShieldCheck, Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function App() {
   const toast = useToast();
   const [currentView, setCurrentView] = useState<string>("home");
+  const { t } = useTranslation();
 
   // Dynamic route dispatcher
   const renderCurrentView = () => {
@@ -59,19 +62,25 @@ export default function App() {
             <Blog />
           </div>
         );
+      case "trainings":
+        return (
+          <div className="animate-fade-in">
+            <Trainings />
+          </div>
+        );
       case "contact":
         return (
           <div className="animate-fade-in py-24 bg-cream-50" id="contact-page-view">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] px-3 py-1 bg-purple-900/5 border border-purple-900/10 rounded inline-block">
-                  Birebir Görüşme & İletişim
+                  {t("app.contact.badge", "Birebir Görüşme & İletişim")}
                 </span>
                 <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-purple-900 italic">
-                  Bütünsel Dönüşüm Seans Randevusu
+                  {t("app.contact.title", "Bütünsel Dönüşüm Seans Randevusu")}
                 </h2>
                 <p className="font-sans text-xs sm:text-sm text-purple-800 font-semibold leading-relaxed">
-                  Zihinsel düğümlerinizi çözmek, bilinçaltı blokajlarınızı gidermek veya frekans analizlerimize katılmak için randevunuzu hemen talep edin.
+                  {t("app.contact.desc", "Zihinsel düğümlerinizi çözmek, bilinçaltı blokajlarınızı gidermek veya frekans analizlerimize katılmak için randevunuzu hemen talep edin.")}
                 </p>
               </div>
 
@@ -80,7 +89,7 @@ export default function App() {
                 <div className="lg:col-span-5 space-y-6">
                   <div className="bg-white rounded border border-purple-900/10 p-6 sm:p-8 space-y-6 shadow-sm">
                     <h3 className="font-display font-bold text-lg text-purple-950 italic">
-                      Ayşe Erendor İletişim Bilgileri
+                      {t("app.contact.infoTitle", "Ayşe Erendor İletişim Bilgileri")}
                     </h3>
                     
                     <div className="space-y-4 font-sans text-xs sm:text-sm text-purple-900">
@@ -150,7 +159,7 @@ export default function App() {
                 {/* Quick Interactive Reservation Request Form */}
                 <div className="lg:col-span-7 bg-white rounded border border-purple-900/10 p-6 sm:p-8 shadow-sm">
                   <h3 className="font-display font-bold text-lg text-purple-950 italic mb-6">
-                    Ön Randevu & Bilgi Talep Formu
+                    {t("app.contact.formTitle", "Ön Randevu & Bilgi Talep Formu")}
                   </h3>
 
                   <form 
@@ -258,7 +267,7 @@ export default function App() {
                     }} 
                     className="bg-[#300C32] hover:bg-purple-900 text-white font-sans font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded shadow cursor-pointer transition-all"
                   >
-                    Mizaç Testini Hemen Çöz
+                    {t("app.home.takeQuiz", "Mizaç Testini Hemen Çöz")}
                   </button>
                   <button 
                     onClick={() => {
@@ -267,7 +276,7 @@ export default function App() {
                     }} 
                     className="border border-purple-900/15 hover:bg-cream-100 text-purple-800 font-sans font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded cursor-pointer transition"
                   >
-                    Biyografiyi Keşfet
+                    {t("app.home.exploreBio", "Biyografiyi Keşfet")}
                   </button>
                 </div>
               </div>
